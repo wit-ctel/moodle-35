@@ -35,6 +35,11 @@
                 {{#str}} courses {{/str}}
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link {{#viewinginfoareas}}active{{/viewinginfoareas}}" href="#myoverview_infoarea_view" role="tab" data-toggle="tab" data-tabname="courses">
+                {{#str}} infoareas, block_myoverview {{/str}}
+            </a>
+        </li>
     </ul>
     <div class="tab-content content-centred">
         <div role="tabpanel" class="tab-pane fade {{#viewingtimeline}}in active{{/viewingtimeline}}" id="myoverview_timeline_view">
@@ -44,6 +49,11 @@
             {{#coursesview}}
                 {{> block_myoverview/courses-view }}
             {{/coursesview}}
+        </div>
+        <div role="tabpanel" class="tab-pane fade {{#viewinginfoareas}}in active{{/viewinginfoareas}}" id="myoverview_infoarea_view">
+            {{#infoareasview}}
+                {{> block_myoverview/infoarea-view }}
+            {{/infoareasview}}
         </div>
     </div>
 </div>
