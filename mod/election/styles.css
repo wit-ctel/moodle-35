@@ -1,0 +1,10 @@
+.path-mod-election .mform.unresponsive .fitem div.fitemtitle {
+    float: left;
+    width: 180px;
+}
+
+@media (max-width: 768px) {
+    .path-mod-election .mform.unresponsive .felement.fstatic {
+        padding-top: 0;
+    }
+}
