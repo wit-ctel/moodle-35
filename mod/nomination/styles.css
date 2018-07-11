@@ -1,0 +1,32 @@
+
+
+.path-mod-nomination .fgroup span {
+    display: block;
+}
+
+.path-mod-nomination .moodle-actionmenu {
+	display: inline-block !important;
+}
+
+.path-mod-nomination dd {
+	line-height: 2em;
+}
+
+.path-mod-nomination .nominatebtn {
+	margin: 0 0 5px 10px;
+}
+.path-mod-nomination .nominfo {
+	margin: 0 0 5px 10px;
+	font-weight: bold;
+}
+.path-mod-nomination .felement.fgroup > span {
+    display: block;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .path-mod-election .mform.unresponsive .felement.fstatic {
+        padding-top: 0;
+    }
+}
