@@ -1,0 +1,20 @@
+<button type="button" id="js-show-fee" class="btn btn-default">View my fee balance</button>
+
+<div id="js-fee-balance" class="fee-balance">
+    <h3 class="fee-balance__title">Your fee balance is:</h3>
+    <p class="fee-balance__value{{#isoverdue}} overdue{{/isoverdue}}"><span>&euro;</span> {{balance}}</p>
+
+    {{#isoverdue}}
+       {{{overduenotice}}}
+    {{/isoverdue}}
+</div>
+
+{{#js}}
+require(['jquery'], function($) {
+     $('#js-show-fee').on('click', function () {
+             var $btn = $(this);
+             $('#js-fee-balance').show();
+             $btn.hide();
+     });
+});    
+{{/js}}
