@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="enrol/lmb/db" VERSION="20160209" COMMENT="XMLDB file for Moodle enrol/lmb"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="enrol_lmb_courses" COMMENT="Courses that come from LMB/Banner">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="id of the table, please edit me"/>
+        <FIELD NAME="sourcedid" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false" COMMENT="Unique id number from Banner/LMB"/>
+        <FIELD NAME="sourcedidsource" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false" COMMENT="Default comment for the field, please edit me"/>
+        <FIELD NAME="coursenumber" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The course number (crn) for the course"/>
+        <FIELD NAME="term" TYPE="char" LENGTH="128" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Banner term code for the course"/>
+        <FIELD NAME="longtitle" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Default comment for the field, please edit me"/>
+        <FIELD NAME="fulltitle" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Course title as reported by Banner/LMB"/>
+        <FIELD NAME="rubric" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The rubric for the course"/>
+        <FIELD NAME="dept" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The unit name (Department) reported for the course"/>
+        <FIELD NAME="depttitle" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The full department title"/>
+        <FIELD NAME="num" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Default comment for the field, please edit me"/>
+        <FIELD NAME="section" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Default comment for the field, please edit me"/>
+        <FIELD NAME="startdate" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The start date of the course"/>
+        <FIELD NAME="enddate" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="End date of the course"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="primary key of the table, please edit me"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="enrolmbcour_sou_ix" UNIQUE="false" FIELDS="sourcedid"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="enrol_lmb_people" COMMENT="People as reported by LMB/Banner">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="id of the table, please edit me"/>
+        <FIELD NAME="sourcedid" TYPE="char" LENGTH="128" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Unique id number from Banner/LMB"/>
+        <FIELD NAME="sourcedidsource" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The sourcedid source, unique form every other banner system"/>
+        <FIELD NAME="sctid" TYPE="char" LENGTH="127" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="fullname" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Full name of person"/>
+        <FIELD NAME="familyname" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Familty name of person"/>
+        <FIELD NAME="givenname" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Given name of the person"/>
+        <FIELD NAME="nickname" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="email" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="email address reported"/>
+        <FIELD NAME="username" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The username to use"/>
+        <FIELD NAME="telephone" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="telephone number reported"/>
+        <FIELD NAME="adrstreet" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The street address reported"/>
+        <FIELD NAME="locality" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="region" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="State/Province"/>
+        <FIELD NAME="country" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="academicmajor" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The users academic major as reported by LMB/Banner"/>
+        <FIELD NAME="customfield1" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="User-defined custom field"/>
+        <FIELD NAME="recstatus" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The recstatus (3 = delete)"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="primary key of the table, please edit me"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="enrolmbpeop_sou_ix" UNIQUE="false" FIELDS="sourcedid"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="enrol_lmb_enrolments" COMMENT="Enrolments from LMB/Banner">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="id of the table, please edit me"/>
+        <FIELD NAME="coursesourcedid" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false" COMMENT="The courses unique identifier"/>
+        <FIELD NAME="personsourcedid" TYPE="char" LENGTH="128" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The persons unique id number"/>
+        <FIELD NAME="term" TYPE="char" LENGTH="128" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Banner term code for which this enrolment applies"/>
+        <FIELD NAME="role" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="-1" SEQUENCE="false" COMMENT="The role code for the enrolment"/>
+        <FIELD NAME="status" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="-1" SEQUENCE="false" COMMENT="The current status of the enrolment"/>
+        <FIELD NAME="beginrestrict" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="beginrestricttime" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="endrestrict" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="endrestricttime" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="extractstatus" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="A status field used to track enrolments from an extract"/>
+        <FIELD NAME="succeeded" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="If the enrolment was added to the moodle db properly"/>
+        <FIELD NAME="gradable" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="1 if this membership is gradable"/>
+        <FIELD NAME="midtermgrademode" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The grade mode for the midterm result"/>
+        <FIELD NAME="midtermsubmitted" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="1 if the midterm grade has been submitted"/>
+        <FIELD NAME="finalgrademode" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The grade mode for the final grade"/>
+        <FIELD NAME="finalsubmitted" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="1 if the final grade has been submitted"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="primary key of the table, please edit me"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="enrolmbenro_per_ix" UNIQUE="false" FIELDS="personsourcedid"/>
+        <INDEX NAME="enrolmbenro_cou_ix" UNIQUE="false" FIELDS="coursesourcedid"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="enrol_lmb_raw_xml" COMMENT="A table the stores xml as it was received from LMB">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="id of the table, please edit me"/>
+        <FIELD NAME="headers" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The headers that arrived with the message"/>
+        <FIELD NAME="xml" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The raw xml"/>
+        <FIELD NAME="timereceived" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The time the xml was received"/>
+        <FIELD NAME="xmltype" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The type the xml is (group, person, membership)"/>
+        <FIELD NAME="processed" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="If the xml was process successfully."/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="primary key of the table, please edit me"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="enrol_lmb_crosslists" COMMENT="A crosslisting lookup table">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="id of the table, please edit me"/>
+        <FIELD NAME="coursesourcedidsource" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false" COMMENT="The sourcedid source, unique form every other banner system"/>
+        <FIELD NAME="coursesourcedid" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false" COMMENT="The course sourcedid"/>
+        <FIELD NAME="crosssourcedidsource" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false" COMMENT="The sourcedid source, unique form every other banner system"/>
+        <FIELD NAME="crosslistsourcedid" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false" COMMENT="The crosslists sourcedid for the course"/>
+        <FIELD NAME="crosslistgroupid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="The group id in the crosslisted course"/>
+        <FIELD NAME="status" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="-1" SEQUENCE="false" COMMENT="The current status of the enrolment"/>
+        <FIELD NAME="manual" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Is a manual XLS"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="8" NOTNULL="false" SEQUENCE="false" COMMENT="Is this a merged or meta crosslist?"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="primary key of the table, please edit me"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="enrolmbcros_cou_ix" UNIQUE="false" FIELDS="coursesourcedid"/>
+        <INDEX NAME="enrolmbcros_cro_ix" UNIQUE="false" FIELDS="crosslistsourcedid"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="enrol_lmb_terms" COMMENT="Terms as reported by LMB/Banner">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="id of the table, please edit me"/>
+        <FIELD NAME="sourcedid" TYPE="char" LENGTH="128" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Banner unique id for the term"/>
+        <FIELD NAME="sourcedidsource" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false" COMMENT="Default comment for the field, please edit me"/>
+        <FIELD NAME="title" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The title of the term"/>
+        <FIELD NAME="starttime" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The start time of the term"/>
+        <FIELD NAME="endtime" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The end time of the term"/>
+        <FIELD NAME="studentshowtime" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The time at which the courses for this term should be un-hidden"/>
+        <FIELD NAME="active" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="1" SEQUENCE="false" COMMENT="1 if we should actively listen to this term"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Default comment for the field, please edit me"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="primary key of the table, please edit me"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="enrolmbterm_sou_ix" UNIQUE="false" FIELDS="sourcedid"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="enrol_lmb_categories" COMMENT="A table to track categories">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="termsourcedid" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="sourcedidsource" TYPE="char" LENGTH="128" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="dept" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="categoryid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cattype" TYPE="char" LENGTH="32" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="enrolmbcate_ter_ix" UNIQUE="false" FIELDS="termsourcedid"/>
+        <INDEX NAME="enrolmbcate_dep_ix" UNIQUE="false" FIELDS="dept"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
