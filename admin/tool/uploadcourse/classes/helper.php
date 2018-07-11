@@ -461,9 +461,10 @@ class tool_uploadcourse_helper {
                     $id = $record->id;
                     $parent = $record->id;
                 } else {
-                    // Not found.
-                    $id = -1;
-                    break;
+                    // new category, just create it
+                    $a_new_category = coursecat::create($params);
+                    $id = $a_new_category->id;
+                    $parent = $a_new_category->id;
                 }
             }
             $cache->set($cachekey, $id);
