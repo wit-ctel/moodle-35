@@ -101,3 +101,17 @@
     width: 93px;
     color: #666;
 }
+
+/**
+* Global navigation drawer
+**/
+
+// custom style to indicate nav items marked as hidden
+.list-group-item-hidden, .list-group-item-hidden:hover {
+    color: $gray-light;
+    text-decoration: line-through;
+
+    .icon {
+      color: $gray-light;
+    }
+}
