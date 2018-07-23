@@ -409,7 +409,7 @@ class format_simple_renderer extends format_section_renderer_base {
         if (isset($me) && $me->get_course_image_url()) {
             $course_image_url = $me->get_course_image_url();    
         } else {
-            $course_image_url = $this->output->pix_url('no-course-img', 'format_simple'); // then use default image
+            $course_image_url = $this->output->image_url('no-course-img', 'format_simple'); // then use default image
         }
         
         return html_writer::empty_tag('img', array('src' => $course_image_url, 
