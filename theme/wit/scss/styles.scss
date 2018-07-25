@@ -2,6 +2,13 @@
 * WIT theme customizations
 **/
 
+/**
+ *Misc CSS changes
+ */
+.site-name{display:none !important;}
+
+a[href="#myoverview_courses_view_future"]{display:none;}
+
 
 /**
 * Login page
@@ -102,16 +109,4 @@
     color: #666;
 }
 
-/**
-* Global navigation drawer
-**/
 
-// custom style to indicate nav items marked as hidden
-.list-group-item-hidden, .list-group-item-hidden:hover {
-    color: $gray-light;
-    text-decoration: line-through;
-
-    .icon {
-      color: $gray-light;
-    }
-}
