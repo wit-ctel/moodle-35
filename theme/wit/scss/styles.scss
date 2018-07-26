@@ -3,9 +3,8 @@
 **/
 
 /**
- *Misc CSS changes
+ * Misc CSS changes
  */
-
 
 /** Change link to lighter colour */
 .site-name{display:none !important;}
@@ -26,6 +25,7 @@ a {
     top: 15px;
 }
 
+
 /**
 * Login page
 **/
@@ -35,18 +35,19 @@ a {
     max-height: 100px;
 }
 
-#page{
+#page {
     background-color:#f4f4f4;
 }
 
 /**login page remove page background **/
-.mt-0{
+.mt-0 {
     background-color:transparent !important;
 }
 
-#nav-drawer{
+#nav-drawer {
     background-color:#eceeef;
 }
+
 .pagelayout-login #region-main {
     border: 0;
     background-color: inherit;
@@ -137,29 +138,35 @@ a {
     color: #666;
 }
 
+
 /**
  * Course Header Image
  */
+
 #course-header {
     float: left;
     padding-top:10px;
     padding-left:10px;
 }
+
 #course-header img {
     height: 70px;
     padding-right: 20px;
 }
+
 .pull-xs-left{
-    padding:10px;
+    padding: 10px;
 }
+
 .context-header-settings-menu, .region-main-settings-menu {
     margin-top: 15px;
     margin-right: 20px;
 }
 
-//
-// Panels
-// --------------------------------------------------
+
+/**
+ * Panels
+ */
 
 .panel {
     border: #ddd 1px solid;
@@ -184,9 +191,9 @@ a {
 }
 
 .panel-body h4{
-  font-weight:300;
-  font-size:1.25rem;
-  margin-top:1rem;
+    font-weight: 300;
+    font-size: 1.25rem;
+    margin-top: 1rem;
 }
 
 .panel-warning {
@@ -200,8 +207,6 @@ a {
 .panel-info {
     border-color: #e2e2e2;
 }
-
-
 
 .panel-primary > .panel-heading {
     color: #fff;
@@ -272,10 +277,12 @@ a {
     background-color: #e6e6e6;
     border-color: #adadad;
 }
+
 .caption h3 {
     font-size: 1.5rem;
     margin-top: 10px;
 }
+
 .caption h4 {
     font-size: 1.5rem;
     margin-top: 10px;
@@ -375,13 +382,15 @@ a {
 /**
  * Course Page - Nav Guides Previous/Next font Size
  */
-.section__footer .nav_guide{
+
+.section__footer .nav_guide {
     font-size:1.15rem;
 }
 
-.section__footer .text{
+.section__footer .text {
     font-size:1.4rem;
 }
+
 
 /**
  * Set tag colour to purple from default blue/green
