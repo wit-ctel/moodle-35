@@ -35,17 +35,17 @@ a {
     max-height: 100px;
 }
 
-#page {
-    background-color:#f4f4f4;
+#page-wrapper {
+    background-color: #f4f4f4;
 }
 
 /**login page remove page background **/
 .mt-0 {
-    background-color:transparent !important;
+    background-color: transparent !important;
 }
 
 #nav-drawer {
-    background-color:#eceeef;
+    background-color: #eceeef;
 }
 
 .pagelayout-login #region-main {
@@ -58,7 +58,7 @@ a {
 }
 
 .login__container .card {
-	border:none;
+	border: none;
 }
 
 #login__banner {
