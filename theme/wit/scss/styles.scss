@@ -35,12 +35,12 @@ a {
     max-height: 100px;
 }
 
-#page{
+#page-wrapper{
     background-color:#f4f4f4;
 }
 
 /**login page remove page background **/
-.mt-0{
+.login-page-wrapper{
     background-color:transparent !important;
 }
 
