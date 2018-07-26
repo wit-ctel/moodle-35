@@ -5,10 +5,26 @@
 /**
  *Misc CSS changes
  */
+
+
+/** Change link to lighter colour */
 .site-name{display:none !important;}
 
+/** Hide  */
 a[href="#myoverview_courses_view_future"]{display:none;}
 
+/** Change link to lighter colour */
+a {
+    color: #00acdf;
+}
+
+
+/** move customise this page button to top */
+.customise-this-page {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
 
 /**
 * Login page
@@ -19,6 +35,18 @@ a[href="#myoverview_courses_view_future"]{display:none;}
     max-height: 100px;
 }
 
+#page{
+    background-color:#f4f4f4;
+}
+
+/**login page remove page background **/
+.mt-0{
+    background-color:transparent !important;
+}
+
+#nav-drawer{
+    background-color:#eceeef;
+}
 .pagelayout-login #region-main {
     border: 0;
     background-color: inherit;
@@ -109,4 +137,266 @@ a[href="#myoverview_courses_view_future"]{display:none;}
     color: #666;
 }
 
+/**
+ * Course Header Image
+ */
+#course-header {
+    float: left;
+    padding-top:10px;
+    padding-left:10px;
+}
+#course-header img {
+    height: 70px;
+    padding-right: 20px;
+}
+.pull-xs-left{
+    padding:10px;
+}
+.context-header-settings-menu, .region-main-settings-menu {
+    margin-top: 15px;
+    margin-right: 20px;
+}
 
+//
+// Panels
+// --------------------------------------------------
+
+.panel {
+    border: #ddd 1px solid;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-bottom-color: transparent;
+    border-top-right-radius: -1px;
+    border-top-left-radius: -1px;
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.panel-body h4{
+  font-weight:300;
+  font-size:1.25rem;
+  margin-top:1rem;
+}
+
+.panel-warning {
+    border-color: #fbeed5;
+}
+
+.panel-success {
+    border-color: #d6e9c6;
+}
+
+.panel-info {
+    border-color: #e2e2e2;
+}
+
+
+
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.panel-warning > .panel-heading {
+    color: #c09853;
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
+}
+
+.panel-success > .panel-heading {
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.panel-info > .panel-heading {
+    color: #00acdf;
+    background-color: #f4f4f4;
+    border-color: #e2e2e2;
+}
+
+.panel-danger > .panel-heading {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.thumbnail {
+    display: block;
+    padding: 15px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    -webkit-transition: border 0.2s ease-in-out;
+    -o-transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;
+}
+
+.thumbnail > img, .thumbnail a > img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumbnail > img, .thumbnail a > img, .carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    color: #fff;
+    background-color: #0085ac;
+    border-color: #007da2;
+}
+
+.btn-secondary:focus, .btn-default:focus, .btn-secondary.focus, .btn-default.focus {
+    color: #373a3c;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.caption h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+.caption h4 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+.contentwithoutlink{
+    padding-right: 32px;
+    display: block;
+    height: inherit;
+}
+
+.col-md-4 {
+    float: left;
+    width: 33.33333%;
+}
+
+.col-md-6 {
+    float: left;
+    width: 50%;
+}
+
+.col-sm-4 {
+    float: left;
+    width: 33%;
+}
+
+.col-sm-6 {
+    float: left;
+    width: 50%;
+}
+
+.collapse.in {
+    display: block;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.img-thumbnail {
+    padding: .25rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-rounded {
+    border-radius: .3rem;
+}
+
+.btn, #page-grade-grading-manage .actions .action, #rubric-rubric.gradingform_rubric #rubric-criteria .criterion .addlevel input, #rubric-rubric.gradingform_rubric .addcriterion {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #ad53b2;
+    border-color: #ad53b2;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #77b300;
+    border-color: #77b300;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #f80;
+    border-color: #f80;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #ff4136;
+    border-color: #ff4136;
+}
+
+
+/**
+ * Course Page - Nav Guides Previous/Next font Size
+ */
+.section__footer .nav_guide{
+    font-size:1.15rem;
+}
+
+.section__footer .text{
+    font-size:1.4rem;
+}
+
+/**
+ * Set tag colour to purple from default blue/green
+ */
+
+.tag, .statusok, .statuswarning, .statusserious, .statuscritical, .assignfeedback_editpdf_widget .label, .label, .badge {
+    background-color: #ad53b2;
+    display: inline-block;
+    padding: .3em .4em;
+    font-size: 70%;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
