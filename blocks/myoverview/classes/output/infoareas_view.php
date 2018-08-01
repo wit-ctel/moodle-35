@@ -63,7 +63,30 @@ class infoareas_view implements renderable, templatable {
             $exportedcourse = $exporter->export($output);
             // Convert summary to plain text.
             $exportedcourse->summary = content_to_text($exportedcourse->summary, $exportedcourse->summaryformat);
+            
+            $course = new \course_in_list($course);
+            foreach ($course->get_course_overviewfiles() as $file) {
+                $isimage = $file->is_valid_image();
+                if ($isimage) {
+                    $url = file_encode_url("$CFG->wwwroot/pluginfile.php",
+                        '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
+                        $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
+                    $exportedcourse->courseimage = $url;
+                    $exportedcourse->classes = 'courseimage';
+                    break;
+                }
+            }
 
+            $exportedcourse->color = $this->coursecolor($course->id);
+
+            if (!isset($exportedcourse->courseimage)) {
+                $pattern = new \core_geopattern();
+                $pattern->setColor($exportedcourse->color);
+                $pattern->patternbyid($courseid);
+                $exportedcourse->classes = 'coursepattern';
+                $exportedcourse->courseimage = $pattern->datauri();
+            }
+            
             // Include course visibility.
             $exportedcourse->visible = (bool)$course->visible;
             
@@ -98,5 +121,20 @@ class infoareas_view implements renderable, templatable {
         }
 
         return $infoareasview;
+    }
+    
+    /**
+     * Generate a semi-random color based on the courseid number (so it will always return
+     * the same color for a course)
+     *
+     * @param int $courseid
+     * @return string $color, hexvalue color code.
+     */
+    protected function coursecolor($courseid) {
+        // The colour palette is hardcoded for now. It would make sense to combine it with theme settings.
+        $basecolors = ['#81ecec', '#74b9ff', '#a29bfe', '#dfe6e9', '#00b894', '#0984e3', '#b2bec3', '#fdcb6e', '#fd79a8', '#6c5ce7'];
+
+        $color = $basecolors[$courseid % 10];
+        return $color;
     }
 }
