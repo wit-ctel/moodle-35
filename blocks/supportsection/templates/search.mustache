@@ -1,0 +1,28 @@
+<div>
+<p><b>Top 5 Support Queries This Week</b> <br /></p>
+<ul id="studentsupport_group" role="group" tabindex="-1">
+{{#supportarray}}
+  <li class="block_supportsection__li" tabindex="-1">
+    <p class="hasicon" tabindex="0">
+    <a href="{{url}}" tabindex="-1" id="" target="_blank">
+      <img class="smallicon" alt="" src="/theme/image.php/huey/core/1487170873/i/info" tabindex="-1">
+      {{title}}
+    </a>
+    </p>
+  </li>
+{{/supportarray}}
+</ul>
+</div>
+<div>
+<p><b>Search Knowledge Base  For Answers</b> <br /></p>
+  <form class="adminsearchform" method="post" action="{{supportsearch}}" target="_blank">
+  <input name="params" value="eyJyZXN1bHRfcGFnZSI6InN1cHBvcnRcL3NlYXJjaCJ9" type="hidden">
+  <input name="ACT" value="14" type="hidden">
+  <input name="site_id" value="1" type="hidden">
+  <input name="csrf_token" value="daf863b6e847001f200ab4a4cc9cfd4e49c108b2" type="hidden">
+      <div class="input-group">
+          <input id="support_query"class="form-control" name="keywords" value="" placeholder="e.g. How do I login?" type="search">
+          <span class="input-group-btn"><button type="submit" class="btn btn-default">Go</button></span>
+      </div>
+   </form>
+</div>

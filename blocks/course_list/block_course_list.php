@@ -46,6 +46,9 @@ class block_course_list extends block_list {
         $this->content->icons = array();
         $this->content->footer = '';
 
+        $renderer = $this->page->get_renderer('core', 'course');
+        $this->content->items[0] = $renderer->course_search_form('', 'short') . '<br/>';
+
         $icon = $OUTPUT->pix_icon('i/course', get_string('course'));
 
         $adminseesall = true;

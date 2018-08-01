@@ -1,0 +1,29 @@
+namespace :moodle do
+  desc 'Copy config.php to release directory'
+  task :'copy-config' do 
+    on roles(:web) do
+      execute :cp, shared_path.join('config.php'), release_path
+    end
+  end
+  
+  desc 'Enable maintenance mode on Moodle site'
+  task :'enable-maintenance' do
+    on roles(:admin) do
+      execute :php, current_path.join('admin', 'cli', 'maintenance.php'), '--enable'
+    end
+  end 
+  
+  desc 'Disable maintenance mode on Moodle site'
+  task :'disable-maintenance' do
+    on roles(:admin) do
+      execute :php, current_path.join('admin', 'cli', 'maintenance.php'), '--disable'
+    end
+  end
+  
+  desc 'Purge all internal Moodle caches'
+  task :'purge-caches' do
+    on roles(:admin) do
+      execute :php, current_path.join('admin', 'cli', 'purge_caches.php')
+    end
+  end 
+end

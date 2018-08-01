@@ -1,0 +1,17 @@
+#js-fee-balance {
+  display: none;
+}
+
+.fee-balance__title {
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+.fee-balance__value {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.overdue {
+  color: #EA5771;
+}
