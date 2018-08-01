@@ -7,10 +7,10 @@
  */
 
 /** Change link to lighter colour */
-.site-name{display:none !important;}
+.site-name {display:none !important;}
 
 /** Hide  */
-a[href="#myoverview_courses_view_future"]{display:none;}
+a[href="#myoverview_courses_view_future"] {display:none;}
 
 /** Change link to lighter colour */
 a {
@@ -40,7 +40,7 @@ a {
 }
 
 /**login page remove page background **/
-.login-page-wrapper{
+.login-page-wrapper {
     background-color:transparent !important;
 }
 
@@ -418,4 +418,19 @@ a {
 .pagination {
     align-items: center;
     justify-content: center;
+}
+
+
+/**
+* Global navigation drawer
+**/
+
+// custom style to indicate nav items marked as hidden
+.list-group-item-hidden, .list-group-item-hidden:hover {
+    color: $gray-light;
+    text-decoration: line-through;
+
+    .icon {
+      color: $gray-light;
+    }
 }
