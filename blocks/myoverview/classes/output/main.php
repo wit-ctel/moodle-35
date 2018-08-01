@@ -67,7 +67,7 @@ class main implements renderable, templatable {
         $infoareas = [];
         $coursesprogress = [];
 
-        foreach ($courses as $course) {
+        foreach ($courses as $key => $course) {
 
             if (preg_match("/^SUPPORT|INFO|PROG_/", $course->idnumber)) {
                 $infoareas[$course->id] = $course; 
