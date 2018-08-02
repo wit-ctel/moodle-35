@@ -400,3 +400,35 @@ a {
     vertical-align: baseline;
     border-radius: .25rem;
 }
+
+.label-default {
+    background-color: #777;
+}
+
+.label-primary {
+    background-color: #337ab7;
+}
+
+.label-success {
+    background-color: #5cb85c;
+}
+
+.label-info {
+    background-color: #5bc0de;
+}
+
+.label-warning {
+    background-color: #f0ad4e;
+}
+
+.label-danger {
+    background-color: #d9534f;
+}
+
+/**
+ * Fix for File Manager Choose License Dropdown
+ */
+
+.filemanager .custom-select{
+    width:100%;
+}
