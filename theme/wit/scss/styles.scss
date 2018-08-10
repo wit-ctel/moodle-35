@@ -3,15 +3,14 @@
 **/
 
 /**
- *Misc CSS changes
+ * Misc CSS changes
  */
 
-
 /** Change link to lighter colour */
-.site-name{display:none !important;}
+.site-name {display:none !important;}
 
 /** Hide  */
-a[href="#myoverview_courses_view_future"]{display:none;}
+a[href="#myoverview_courses_view_future"] {display:none;}
 
 /** Change link to lighter colour */
 a {
@@ -26,6 +25,7 @@ a {
     top: 15px;
 }
 
+
 /**
 * Login page
 **/
@@ -35,18 +35,19 @@ a {
     max-height: 100px;
 }
 
-#page-wrapper{
-    background-color:#f4f4f4;
+#page-wrapper {
+    background-color: #f4f4f4;
 }
 
 /**login page remove page background **/
-.login-page-wrapper{
+.login-page-wrapper {
     background-color:transparent !important;
 }
 
-#nav-drawer{
-    background-color:#eceeef;
+#nav-drawer {
+    background-color: #eceeef;
 }
+
 .pagelayout-login #region-main {
     border: 0;
     background-color: inherit;
@@ -57,7 +58,7 @@ a {
 }
 
 .login__container .card {
-	border:none;
+	border: none;
 }
 
 #login__banner {
@@ -93,7 +94,7 @@ a {
 
 #login__moodle-logo {
     width: 100%;
-    height: 140px;
+    height: 120px;
     border-bottom: thin #dedede solid;
 }
 
@@ -137,29 +138,35 @@ a {
     color: #666;
 }
 
+
 /**
  * Course Header Image
  */
+
 #course-header {
     float: left;
     padding-top:10px;
     padding-left:10px;
 }
+
 #course-header img {
     height: 70px;
     padding-right: 20px;
 }
+
 .pull-xs-left{
-    padding:10px;
+    padding: 10px;
 }
+
 .context-header-settings-menu, .region-main-settings-menu {
     margin-top: 15px;
     margin-right: 20px;
 }
 
-//
-// Panels
-// --------------------------------------------------
+
+/**
+ * Panels
+ */
 
 .panel {
     border: #ddd 1px solid;
@@ -184,9 +191,9 @@ a {
 }
 
 .panel-body h4{
-  font-weight:300;
-  font-size:1.25rem;
-  margin-top:1rem;
+    font-weight: 300;
+    font-size: 1.25rem;
+    margin-top: 1rem;
 }
 
 .panel-warning {
@@ -200,8 +207,6 @@ a {
 .panel-info {
     border-color: #e2e2e2;
 }
-
-
 
 .panel-primary > .panel-heading {
     color: #fff;
@@ -272,10 +277,12 @@ a {
     background-color: #e6e6e6;
     border-color: #adadad;
 }
+
 .caption h3 {
     font-size: 1.5rem;
     margin-top: 10px;
 }
+
 .caption h4 {
     font-size: 1.5rem;
     margin-top: 10px;
@@ -375,13 +382,15 @@ a {
 /**
  * Course Page - Nav Guides Previous/Next font Size
  */
-.section__footer .nav_guide{
+
+.section__footer .nav_guide {
     font-size:1.15rem;
 }
 
-.section__footer .text{
+.section__footer .text {
     font-size:1.4rem;
 }
+
 
 /**
  * Set tag colour to purple from default blue/green
@@ -399,6 +408,31 @@ a {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25rem;
+}
+
+
+/**
+ * Pagination
+ */
+
+.pagination {
+    align-items: center;
+    justify-content: center;
+}
+
+
+/**
+* Global navigation drawer
+**/
+
+// custom style to indicate nav items marked as hidden
+.list-group-item-hidden, .list-group-item-hidden:hover {
+    color: $gray-light;
+    text-decoration: line-through;
+
+    .icon {
+      color: $gray-light;
+    }
 }
 
 .label-default {
@@ -436,3 +470,4 @@ a {
 .filemanager .custom-select{
     width:100%;
 }
+
