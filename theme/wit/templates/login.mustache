@@ -83,6 +83,8 @@ require(['jquery'], function($) {
             imageURL=imageURL+"-lg.jpg";
         }
         $("body").css("background-image", "url("+imageURL+")");
+        $("body").css("background-repeat", "no-repeat");
+        $("body").css("background-position", "center center");
     }
 });
 {{/js}}
