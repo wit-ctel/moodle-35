@@ -73,7 +73,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         if (empty($PAGE->layout_options['nonavbar'])) {
             $html .= html_writer::start_div('clearfix w-100', array('id' => 'page-navbar'));
             $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
-            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right');
+            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right customise-this-page');
             $html .= html_writer::end_div();
         } else if ($pageheadingbutton) {
             $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right customise-this-page');
