@@ -4,7 +4,7 @@
 
 .block_settings .block_tree p.hasicon {
     text-indent: -21px;
-    padding-left: 21px;
+    padding-left: 0;
 }
 
 .block_settings .block_tree p.hasicon img {
@@ -20,7 +20,7 @@
 }
 
 .block_settings .block_tree .tree_item.branch {
-    padding-left: 21px;
+      padding-left: 0;
 }
 
 .block_settings .block_tree .tree_item {
