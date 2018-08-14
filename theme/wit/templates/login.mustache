@@ -55,18 +55,53 @@
 {{#js}}
 require(['theme_boost/loader']);
 require(['jquery'], function($) {
+    $("#login").submit(function(event) {
+        // Remove error if already exists
+        if ($('#username-error').length){
+            $('#username-error').remove();
+        }
+        //get username input content
+        var username = $("#username").val();
+
+        //create RegExp for student number with W eg. W20082018
+        var regex = new RegExp(/^[a-z]{1}[0-9]{8}$/i);
+
+        //If username contains @ symbol display error and prevent login submit
+        if( username.indexOf('@') != -1 ){
+            console.log($("#username").val());
+            $('#username').after("<div id='username-error' style='background: red; font-size: 80%; color: white; padding: 5px; margin-top: 10px;'>Please use your Staff ID, not your email address</div>");
+            event.preventDefault();
+        } 
+
+        //If student ID contains W display error and prevent login submit
+        if(regex.test(username) == true){
+            console.log(regex.test(username));
+            $('#username').after("<div id='username-error' style='background: red; font-size: 80%; color: white; padding: 5px; margin-top: 10px;'>Please enter your student number without the W</div>");
+            event.preventDefault();
+        } 
+    });
+
+//Add login page background image
     if ($("#page-login-index").length){
         var URLbase = "/theme/wit/pix/login/";
+
+        //define total number of day and night images
         var nightTotal = 4;
         var dayTotal = 9;
+
+        // pick a random day or night image
         var randDay = Math.floor(Math.random()*dayTotal) + 1;
         var randNight = Math.floor(Math.random()*nightTotal) + 1;
         var dayImage = "day-"+randDay;
         var nightImage = "night-"+randNight;
+
+        // set image size and file extension
         var xs = "-xs.jpg";
         var sm= "-sm.jpg";
         var lg = "-lg.jpg";
         var imageURL = "";
+
+        //get time of day ans build image URL for different screen sizes
         var today = new Date().getHours();
         if (today >= 6 && today <= 20) {
            imageURL = URLbase+dayImage; 
@@ -82,6 +117,7 @@ require(['jquery'], function($) {
         else{
             imageURL=imageURL+"-lg.jpg";
         }
+        // set background images and css properties
         $("body").css("background-image", "url("+imageURL+")");
         $("body").css("background-repeat", "no-repeat");
         $("body").css("background-position", "center center");
