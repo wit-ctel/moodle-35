@@ -94,7 +94,7 @@ a {
 
 #login__moodle-logo {
     width: 100%;
-    height: 140px;
+    height: 120px;
     border-bottom: thin #dedede solid;
 }
 
@@ -434,3 +434,40 @@ a {
       color: $gray-light;
     }
 }
+
+.label-default {
+    background-color: #777;
+}
+
+.label-primary {
+    background-color: #337ab7;
+}
+
+.label-success {
+    background-color: #5cb85c;
+}
+
+.label-info {
+    background-color: #5bc0de;
+}
+
+.label-warning {
+    background-color: #f0ad4e;
+}
+
+.label-danger {
+    background-color: #d9534f;
+}
+
+.card-body .text-white{
+    color:#fff !important;
+}
+
+/**
+ * Fix for File Manager Choose License Dropdown
+ */
+
+.filemanager .custom-select{
+    width:100%;
+}
+
