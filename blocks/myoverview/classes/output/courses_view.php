@@ -37,7 +37,7 @@ use core_course\external\course_summary_exporter;
  */
 class courses_view implements renderable, templatable {
     /** Quantity of courses per page. */
-    const COURSES_PER_PAGE = 6;
+    const COURSES_PER_PAGE = 12;
 
     /** @var array $courses List of courses the user is enrolled in. */
     protected $courses = [];
