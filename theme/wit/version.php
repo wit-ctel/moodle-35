@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2018080100;
+$plugin->version   = 2018082200;
 $plugin->requires  = 2018050800;
 $plugin->component = 'theme_wit';
 $plugin->dependencies = [                                                                                                           
