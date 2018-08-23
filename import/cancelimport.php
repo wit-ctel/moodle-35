@@ -1,5 +1,9 @@
 <?php 	
 	$servername = "localhost";
+	//$username = "a565762_trklst";
+	//$password = "trklst123er";
+	//$dbname = "a565762_autoimport";
+
 	$username = "root";
 	$password = "!conpw2018!";	
 	$dbname = "autoimport";
