@@ -18,8 +18,11 @@ nav img{
 h2{
 	padding-left:20px;
 }
+h4{
+	padding-left:20px;
+}
 .wrapper{
-	width: 750px;
+	width: 770px;
 	background-color: #fff;
 	position: relative;
 	padding: 20px;
@@ -28,7 +31,7 @@ h2{
 	margin-right: auto;
 }
 .container{
-	width: 700px;
+	width: 720px;
 	padding: 10px;
 	border: 1px solid rgba(0,0,0,.125);
 	margin-left: auto;
@@ -40,24 +43,33 @@ h2{
 	margin-bottom: 15px;
 }
 .module-title{
-	width:500px; 
+	width:470px; 
 	float:left;
 	padding-left:10px;
+	color:#666;
 }
 .select{
-	width: 110px;
+	width: 190px;
 	float: right;
 }
 .disclaimer{
 	padding:20px;
 }
 .btn{	
-	width: 100px;
+	width: 200px;
 	cursor: pointer;
 }
-
+.completed{
+	cursor:default !important;
+}
 .jumbotron {
     padding: 2rem 2rem;
+}
+.jumbotron-lower{
+	background-color: #f7f8f9;
+}
+.mb-4, .my-4 {
+    margin-bottom: 0.5rem !important;
 }
 p {
     margin-top: 0;

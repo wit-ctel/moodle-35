@@ -1,5 +1,9 @@
 <?php 	
 	$servername = "localhost";
+	//$username = "a565762_trklst";
+	//$password = "trklst123er";
+	//$dbname = "a565762_autoimport";
+
 	$username = "root";
 	$password = "!conpw2018!";	
 	$dbname = "autoimport";
@@ -32,12 +36,5 @@
 		$result = $conn->query($sql);
 		print($result);
 	}
-
-
-	//$sql = "UPDATE modulelist SET importflat='1' WHERE UID=". $moduleID;
-
-	//$result = $conn->query($sql);
-	//echo $sql;		
-		
 	$conn->close();
 ?>
