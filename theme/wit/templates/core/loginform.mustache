@@ -148,14 +148,7 @@
                             class="form-control"
                             placeholder={{#quote}}{{#str}}password{{/str}}{{/quote}}>
                     </div>
-                    {{#rememberusername}}
-                        <div class="rememberpass mt-3">
-                            <input type="checkbox" name="rememberusername" id="rememberusername" value="1" {{#username}}checked="checked"{{/username}} />
-                            <label for="rememberusername">{{#str}} rememberusername, admin {{/str}}</label>
-                        </div>
-                    {{/rememberusername}}
-
-                    <button type="submit" class="btn btn-primary btn-block mt-3" id="loginbtn">{{#str}}login{{/str}}</button>
+                     <button type="submit" class="btn btn-primary btn-block mt-3" id="loginbtn">{{#str}}login{{/str}}</button>
                 </form>
             </div>
 
@@ -164,11 +157,11 @@
                     <p><a href="{{forgotpasswordurl}}">{{#str}}forgotten{{/str}}</a></p>
                 </div>
                 <div id="login__support-container">
-                    <a class="login__support login__student-support" href="http://ctel.wit.ie/support/students"><img src="/theme/wit/pix/login/support-icon.png"><span class="login__support-text">Student Support</span></a>
-                    <a class="login__support login__staff-support" href="http://ctel.wit.ie/support/staff/"><img src="/theme/wit/pix/login/academic-icon.png"><span class="login__support-text">Staff Support</span></a>
+                    <a class="login__support login__student-support" href="http://ctel.wit.ie/support/students/category/getting-started" target="_blank"><img src="/theme/wit/pix/login/support-icon.png"><span class="login__support-text">Student Support</span></a>
+                    <a class="login__support login__staff-support" href="http://ctel.wit.ie/support/staff/category/getting-started" target="_blank"><img src="/theme/wit/pix/login/academic-icon.png"><span class="login__support-text">Staff Support</span></a>
                 </div>
                 
-                <div class="mt-3">
+                <div class="mt-3" id="cookiesenabled">
                     {{#str}} cookiesenabled {{/str}}
                     {{{cookieshelpiconformatted}}}
                 </div>

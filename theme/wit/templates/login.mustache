@@ -34,13 +34,14 @@
 <body {{{ bodyattributes }}}>
 <div id="page-wrapper" class="login-page-wrapper">
     {{{ output.standard_top_of_body_html }}}
-    <div id="login__banner">
-        <img id="login__banner-logo" src="/theme/wit/pix/login/wit_logo.png">
-    </div>
+    
     <div id="page" class="container-fluid mt-0">
         <div id="page-content" class="row">
             <div id="region-main-box" class="col-12">
                 <section id="region-main" class="col-12">
+                    <div id="login__banner">
+                        <a href="http://www.wit.ie" target="_blank"><img id="login__banner-logo" src="/theme/wit/pix/login/wit_logo.png"></a>
+                    </div>
                     {{{ output.course_content_header }}}
                     {{{ output.main_content }}}
                     {{{ output.course_content_footer }}}
@@ -55,6 +56,19 @@
 {{#js}}
 require(['theme_boost/loader']);
 require(['jquery'], function($) {
+    // hide the avatar
+    $("#login__avatar-container").hide(); 
+    $("#login__moodle-logo").css("height","70px"); 
+    $(".login__container").css("margin-top","130px");  
+
+    //remove page padding for login page
+    $("#page").css("padding-left","0")
+    $("#page").css("padding-right","0")
+
+    //only display the cookies message if cookies are disabled
+    if (navigator.cookieEnabled) { 
+         $("#cookiesenabled").hide();
+    }
     $("#login").submit(function(event) {
         // Remove error if already exists
         if ($('#username-error').length){
@@ -123,4 +137,6 @@ require(['jquery'], function($) {
         $("body").css("background-position", "center center");
     }
 });
+
+
 {{/js}}
