@@ -4121,7 +4121,7 @@ function course_classify_for_timeline($course, $user = null, $completioninfo = n
     }
 
     // Start date not reached.
-    if (!empty($course->startdate) && $course->startdate > $today) {
+    if (!empty($course->startdate) && strtotime('-2 weeks', $course->startdate) > $today) {
         return COURSE_TIMELINE_FUTURE;
     }
 
