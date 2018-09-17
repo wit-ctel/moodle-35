@@ -1,3 +1,31 @@
+### Date:	2018-August-28
+### Release:	v2018082801
+
+### :wrench: Fixes and enhancements
+
+---
+
+#### The administrator default option for student paper storage is now visible to instructors
+
+We noticed a blip, where the administrator default option for student paper storage wasn't passed to instructors during assignment creation. We've corrected this problem so that the "Store student papers" drop-down menu now populates with the preferred administrator option.
+
+**Note:** All instructor default settings will override the global settings of an administrator.
+
+#### V2 assignments are now available on the Moodle course overview page
+
+We found that Moodle V2 assignments failed to appear on the Moodle course overview page when using Moodle 3.3+ which made it difficult to access assignments. This issue was a direct result of Moodle making a change to their course overview block. To resolve this, we've implemented Moodle's [release notesCalendar Action Events API](https://docs.moodle.org/dev/Calendar_API#Action_events). All is back to normal.
+
+#### The link to the Moodle support wizard is no longer available in Moodle
+
+Our Moodle support wizard has been broken for some time, and while we try to fix it, we're removing access to it to prevent confusion. But don't worry! You can still contact Turnitin via email at tiisupport@turnitin.com. We're currently thinking about how we can reintroduce a working version of the form in the future.
+
+#### We've removed the plugin update checker from Turnitin administrator settings
+
+Moodle has superseded this update checker with a tool that not only checks for Turnitin plugin updates but updates to all plugins within Moodle!
+
+You can find Moodle's **Check for available updates** button by visiting: Site administration > Plugins > Plugins overview.
+
+---
 ### Date:	2018-May-23
 ### Release:	v2018052301
 
@@ -63,7 +91,7 @@ This was a bit of an odd one! If an instructor created an assignment with Turnit
 
 #### You can now exit lightboxes using the 'Close' button
        	
-We received a report that the Close button in the Plagiarism Plugin's lightboxes wasn't performing correctly, in that it wasn't actually closing anything! Instead, users saw the following error: 'Uncaught TypeError: Cannot read property 'close' of undefined at HTMLAnchorElement.onclick'. Thanks for the heads up, @Haietza! We've fixed this issue.
+We received a report that the Close button in the Moodle V2 plugin's lightboxes wasn't performing correctly, in that it wasn't actually closing anything! Instead, users saw the following error: 'Uncaught TypeError: Cannot read property 'close' of undefined at HTMLAnchorElement.onclick'. Thanks for the heads up, @Haietza! We've fixed this issue.
 
 > **Lightboxes** display content by filling the screen and dimming out the rest of the web page. They can be closed to find the website contents still available. Items such as the QuickMark manager and the rubric manager are contained inside a lightbox.
 
