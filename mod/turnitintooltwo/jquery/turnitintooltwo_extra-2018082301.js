@@ -49,7 +49,8 @@ jQuery(document).ready(function($) {
                         null,
                         {"aDataSort": [ 2, 3 ]},
                         {"aDataSort": [ 3, 2 ]},
-                        null
+                        null,
+                        null    
                      ],
         "fnDrawCallback": function () {
             $('input[name="selectallcb"]').attr('checked', false);
