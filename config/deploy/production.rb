@@ -22,6 +22,7 @@ server 'wit-mdl-web1-1718.hst.heanet.ie', user: 'moodle', roles: %w{ web app adm
 server 'wit-mdl-web2-1718.hst.heanet.ie', user: 'moodle', roles: %w{ web app }
 server 'wit-mdl-web3-1718.hst.heanet.ie', user: 'moodle', roles: %w{ web app }
 server 'wit-mdl-web4-1718.hst.heanet.ie', user: 'moodle', roles: %w{ web app }
+server 'wit-mdl-web5-1718.hst.heanet.ie', user: 'moodle', roles: %w{ web app }
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
