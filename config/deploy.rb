@@ -25,6 +25,8 @@ set :pty, true
 
 set :user, 'moodle'
 
+set :format, :airbrussh
+
 # Default value for :linked_files is []
 #set :linked_files, %w{.htaccess}
 
